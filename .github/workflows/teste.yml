@@ -8,8 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      name: Run a one-line script
-      run: echo Hello, world!
+      - name: Run a one-line script
+        run: echo Hello, world!
       
   deploy-dev:
     runs-on: ubuntu-latest
@@ -18,8 +18,8 @@ jobs:
       url: 'iesb.br'
     needs: build
     steps:
-     name: Run a one-line script
-     run: echo deploy dev
+     - name: Run a one-line script
+       run: echo deploy dev
      
   deploy-hmg:
     runs-on: ubuntu-latest
@@ -28,8 +28,8 @@ jobs:
       url: 'iesb.br'
     needs: deploy-dev
     steps:
-     name: Run a one-line script
-     run: echo deploy dev
+     - name: Run a one-line script
+       run: echo deploy dev
 
   deploy-prd:
      runs-on: ubuntu-latest
@@ -38,5 +38,5 @@ jobs:
        url: 'iesb.br'
      needs: deploy-hmg
      steps:
-      name: Run a one-line script
-      run: echo deploy prd
+      - name: Run a one-line script
+        run: echo deploy prd
